@@ -1,0 +1,22 @@
+language: python
+python:
+  - "3.8"
+  - "3.11.3"
+  - "3.10"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - pytest
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: "Encrypted <AKIAZJ2RVSWSWTRLDLJJ>="
+  secret_access_key:
+    secure: "Encypted <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>="
+  region: "us-east-2"
+  app: "swe1Project"
+  env: ""
+  bucket_name: "the-target-S3-bucket"
