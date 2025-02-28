@@ -1,4 +1,4 @@
 dist: focal
 language: python
 script: echo
-intall: skip
+install: skip
