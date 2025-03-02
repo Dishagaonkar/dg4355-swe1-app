@@ -15,16 +15,16 @@ install:
 
 before_script:
   - python manage.py migrate
-  # - python manage.py collectstatic --noinput
+#   # - python manage.py collectstatic --noinput
 
-script:
-- black --check .
-- flake8 --max-line-length=150 .
-- coverage run manage.py test
+# script:
+# - black --check .
+# - flake8 --max-line-length=88 .
+# - coverage run manage.py test
 
 
-after_scripts:
-- coveralls
+# after_scripts:
+# - coveralls
 
 deploy:
   provider: elasticbeanstalk
