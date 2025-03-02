@@ -1,9 +1,11 @@
 language: python
 python:
+  - "3.10"
   - "3.11"
 
 before_install:
   - cd swe1Project
+  - pip install --upgrade pip
   - pip install "setuptools<59" "wheel"  # Downgrade setuptools to avoid awsebcli issues
   - pip install "awsebcli==3.20.10"  # Use a stable version of awsebcli
 install:
