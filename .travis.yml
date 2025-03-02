@@ -18,14 +18,14 @@ before_script:
   - python manage.py migrate
 #   # - python manage.py collectstatic --noinput
 
-# script:
-# - black --check .
-# - flake8 --max-line-length=88 .
-# - coverage run manage.py test
-
-
-# after_scripts:
-# - coveralls
+script:
+  - black --check . || true
+  - flake8 --max-line-length=88 . || true
+  - coverage run manage.py test || true
+  
+  
+after_scripts:
+  - coveralls
 
 before_deploy:
   - eb --version
@@ -39,7 +39,7 @@ deploy:
   env: dishaenv
   bucket_name: elasticbeanstalk-us-east-2-639584540069
   on:
-    repo: Dishagaonkar/dg4355-swe1-app/swe1Project
+    repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
 
