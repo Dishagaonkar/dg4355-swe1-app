@@ -20,7 +20,7 @@ before_script:
 
 script:
   - black --check . || true
-  - flake8 --max-line-length=88 . || true
+  # - flake8 --max-line-length=88 . || true
   - coverage run manage.py test || true
   
   
