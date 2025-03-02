@@ -32,3 +32,5 @@ deploy:
     repo: dg4355-swe1-app/swe1Project
     branch: main
   skip_cleanup: 'true'
+
+  #inside travis.yml
