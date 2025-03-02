@@ -6,6 +6,8 @@ python:
 
 before_install:
   - cd swe1Project
+  - pip install --upgrade setuptools
+  - pip install --upgrade awsebcli
 install:
   - pip install -r requirements.txt
 
