@@ -11,7 +11,7 @@ before_install:
   - pip install "awsebcli==3.20.10"  # Use a stable version of awsebcli
 install:
   - pip install -r requirements.txt
-  - pip install black flake8 coverage
+  - pip install black flake8 coverage coveralls
 
 before_script:
   - python manage.py makemigrations
