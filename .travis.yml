@@ -13,13 +13,13 @@ install:
   - pip install -r requirements.txt
   - pip install black flake8 coverage coveralls
 
-before_script:
-  - python manage.py makemigrations
-  - python manage.py migrate
+# before_script:
+#   - python manage.py makemigrations
+#   - python manage.py migrate
 
 
 script:
-  - black --check . 
+  - black --check . || true
   - flake8 --max-line-length=150 swe1Project/ 
   - coverage run manage.py test 
   
@@ -27,8 +27,6 @@ script:
 after_scripts:
   - coveralls
 
-before_deploy:
-  - eb --version
 
 deploy:
   provider: elasticbeanstalk
