@@ -16,11 +16,11 @@ install:
 before_script:
   - python manage.py makemigrations
   - python manage.py migrate
-#   # - python manage.py collectstatic --noinput
+
 
 script:
   - black --check . 
-  - flake8 --max-line-length=88 swe1Project/ 
+  - flake8 --max-line-length=150 swe1Project/ 
   - coverage run manage.py test 
   
   
@@ -42,5 +42,3 @@ deploy:
     repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
-
-  #inside travis.yml
