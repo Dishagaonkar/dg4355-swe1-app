@@ -33,6 +33,12 @@ before_deploy:
   - zip -r deploy.zip swe1Project/
   - pip install awscli
   - echo "Starting AWS Elastic Beanstalk deployment..."
+  - echo "AWS Access Key: $AWS_ID"
+  - echo "AWS Secret Key: ${AWS_KEY:0:4}********"  # Only show first 4 characters for security
+  - aws configure set aws_access_key_id "$AWS_ID"
+  - aws configure set aws_secret_access_key "$AWS_KEY"
+  - aws configure set default.region "us-east-2"
+  - aws configure list
   - ls -lh deploy.zip  # Verify ZIP exists
   - aws s3 ls s3://elasticbeanstalk-us-east-2-639584540069/ 
 
