@@ -39,6 +39,5 @@ deploy:
     repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
-  verbose: true
 
 
