@@ -22,16 +22,16 @@ script:
   - black --check . 
   - flake8 --max-line-length=150 swe1Project/ 
   - coverage run manage.py test 
+  - env
 
 after_scripts:
   - coveralls
 
 
-# before_deploy:
+before_deploy:
+  - cd ..  # Move back to the root directory before deployment
+  - zip -r deploy.zip swe1Project/
 
-  # - gem install bundler
-  # - bundle install
-  # - gem install dpl
 
 
 deploy:
@@ -47,6 +47,7 @@ deploy:
     branch: main
   skip_cleanup: 'true'
   local_dir: swe1Project
+  zip_file: deploy.zip
 
 after_deploy:
   - echo "Deployment finished. Checking AWS status..."
