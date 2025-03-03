@@ -46,7 +46,6 @@ deploy:
     repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
-  local_dir: swe1Project
   zip_file: deploy.zip
 
 after_deploy:
