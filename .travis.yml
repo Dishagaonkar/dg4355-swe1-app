@@ -13,9 +13,6 @@ install:
   - pip install -r requirements.txt
   - pip install black flake8 coverage coveralls
 
-# before_script:
-#   - python manage.py makemigrations
-#   - python manage.py migrate
 
 
 script:
@@ -28,17 +25,11 @@ after_scripts:
   - coveralls
 
 
-# before_deploy:
-#   - cd ..  # Move back to the root directory before deployment
-#   - zip -r deploy.zip swe1Project/
-#   - pip install awscli
-#   - echo "Starting AWS Elastic Beanstalk deployment..."
-#   - aws configure set aws_access_key_id "$AWS_ID"
-#   - aws configure set aws_secret_access_key "$AWS_KEY"
-#   - aws configure set default.region "us-east-2"
-#   - aws configure list
-#   - ls -lh deploy.zip  # Verify ZIP exists
-#   - aws s3 ls s3://elasticbeanstalk-us-east-2-639584540069/ 
+
+before_deploy:
+  - cd swe1Project  # Move inside the correct project directory
+  - zip -r ../deploy.zip .  # Package the entire project contents (not the directory itself)
+  - cd ..  # Move back to the root
 
 
 
@@ -54,11 +45,6 @@ deploy:
     repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
-  # zip_file: deploy.zip
 
-# after_deploy:
-#   - echo "Deployment finished. Checking AWS status..."
-#   - aws elasticbeanstalk describe-environments --region us-east-2
-#   - aws elasticbeanstalk describe-events --region us-east-2 --environment-name dishaenv --max-items 5
 
 
