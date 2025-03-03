@@ -32,6 +32,9 @@ before_deploy:
   - cd ..  # Move back to the root directory before deployment
   - zip -r deploy.zip swe1Project/
   - pip install awscli
+  - echo "Starting AWS Elastic Beanstalk deployment..."
+  - ls -lh deploy.zip  # Verify ZIP exists
+  - aws s3 ls s3://elasticbeanstalk-us-east-2-639584540069/ 
 
 
 
