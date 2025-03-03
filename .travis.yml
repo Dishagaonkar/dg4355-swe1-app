@@ -27,6 +27,12 @@ after_scripts:
   - coveralls
 
 
+before_deploy:
+  - gem install bundler
+  - bundle install
+  - gem install dpl
+
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ID
@@ -39,5 +45,10 @@ deploy:
     repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
+
+after_deploy:
+  - echo "Deployment finished. Checking AWS status..."
+  - aws elasticbeanstalk describe-environments --region us-east-2
+  - aws elasticbeanstalk describe-events --region us-east-2 --environment-name dishaenv --max-items 5
 
 
