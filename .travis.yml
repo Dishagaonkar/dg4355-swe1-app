@@ -19,11 +19,10 @@ install:
 
 
 script:
-  - black --check . || true
+  - black --check . 
   - flake8 --max-line-length=150 swe1Project/ 
   - coverage run manage.py test 
-  
-  
+
 after_scripts:
   - coveralls
 
@@ -40,3 +39,5 @@ deploy:
     repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
+
+
