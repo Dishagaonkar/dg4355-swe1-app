@@ -27,10 +27,11 @@ after_scripts:
   - coveralls
 
 
-before_deploy:
-  - gem install bundler
-  - bundle install
-  - gem install dpl
+# before_deploy:
+
+  # - gem install bundler
+  # - bundle install
+  # - gem install dpl
 
 
 deploy:
@@ -45,6 +46,7 @@ deploy:
     repo: Dishagaonkar/dg4355-swe1-app
     branch: main
   skip_cleanup: 'true'
+  local_dir: swe1Project
 
 after_deploy:
   - echo "Deployment finished. Checking AWS status..."
