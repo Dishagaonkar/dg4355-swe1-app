@@ -36,7 +36,7 @@ deploy:
   env: dishaenv
   bucket_name: elasticbeanstalk-us-east-2-639584540069
   on:
-    repo: Dishagaonkar/dg4355-swe1-app
+    repo: Dishagaonkar/dg4355-swe1-app/swe1Project
     branch: main
   skip_cleanup: 'true'
 
