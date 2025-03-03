@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     "project1-env.eba-ppwce3xa.us-east-2.elasticbeanstalk.com",
     ".elasticbeanstalk.com",
     "localhost",
-    "dishaenv.eba-ppwce3xa.us-east-2.elasticbeanstalk.com"
+    "dishaenv.eba-ppwce3xa.us-east-2.elasticbeanstalk.com",
 ]
 
 
