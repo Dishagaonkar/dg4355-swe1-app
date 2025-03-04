@@ -26,12 +26,6 @@ after_scripts:
 
 
 
-before_deploy:
-  - cd swe1Project  # Move inside the correct project directory
-  - zip -r ../deploy.zip .  # Package the entire project contents (not the directory itself)
-  - cd ..  # Move back to the root
-
-
 
 deploy:
   provider: elasticbeanstalk
