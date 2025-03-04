@@ -1,3 +1,6 @@
 ﻿# dg4355-swe1-app
 
- https://coveralls.io/jobs/161290218
+[![Coverage Status](https://coveralls.io/repos/github/Dishagaonkar/dg4355-swe1-app/badge.svg?branch=main)](https://coveralls.io/github/Dishagaonkar/dg4355-swe1-app?branch=main)
+
+https://coveralls.io/github/Dishagaonkar/dg4355-swe1-app
+
