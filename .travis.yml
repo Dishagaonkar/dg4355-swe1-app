@@ -14,7 +14,6 @@ install:
   - pip install black flake8 coverage coveralls
 
 
-
 script:
   - black --check . 
   - flake8 --max-line-length=150 swe1Project/ 
