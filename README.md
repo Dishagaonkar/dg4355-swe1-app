@@ -7,3 +7,5 @@
 
 https://coveralls.io/github/Dishagaonkar/dg4355-swe1-app
 
+Application url: http://travis-env.eba-ppwce3xa.us-east-2.elasticbeanstalk.com/
+
